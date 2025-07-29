@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Proyecto</title>
+    <script>
+        function validarProyecto() {
+            const nombre = document.forms["formProyecto"]["nombre"].value;
+            const presupuesto = document.forms["formProyecto"]["presupuesto"].value;
+            if (nombre === "" || presupuesto === "") {
+                alert("Por favor, completa todos los campos requeridos.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>Formulario de Proyecto</h2>
+    <form name="formProyecto" action="guardar_proyecto.php" method="POST" onsubmit="return validarProyecto();">
+        Nombre: <input type="text" name="nombre"><br><br>
+        Descripción: <textarea name="descripcion"></textarea><br><br>
+        Presupuesto: <input type="number" step="0.01" name="presupuesto"><br><br>
+        Fecha de inicio: <input type="date" name="fecha_inicio"><br><br>
+        Fecha de fin: <input type="date" name="fecha_fin"><br><br>
+        <input type="submit" value="Guardar Proyecto">
+    </form>
+</body>
+</html>

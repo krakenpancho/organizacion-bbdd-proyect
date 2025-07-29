@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Donante</title>
+    <script>
+        function validarDonante() {
+            const nombre = document.forms["formDonante"]["nombre"].value;
+            const email = document.forms["formDonante"]["email"].value;
+            if (nombre === "" || email === "") {
+                alert("Por favor, completa todos los campos requeridos.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>Formulario de Donante</h2>
+    <form name="formDonante" action="guardar_donante.php" method="POST" onsubmit="return validarDonante();">
+        Nombre: <input type="text" name="nombre"><br><br>
+        Email: <input type="email" name="email"><br><br>
+        Dirección: <input type="text" name="direccion"><br><br>
+        Teléfono: <input type="text" name="telefono"><br><br>
+        <input type="submit" value="Guardar Donante">
+    </form>
+</body>
+</html>
